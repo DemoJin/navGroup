@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin: 0;padding: 0;
+	}
+	a{
+	    text-decoration: none;
+	}
+	.head .my-nav {
+	  height: 36px;
+	  margin: 0 0;
+	}
+	.head .my-nav .my-nav-list {
+	  float: left;
+	  list-style: none;
+	  padding: 0 5px;
+	}
+	.head .my-nav .my-nav-list .link {
+	  display: block;
+	  padding: 15px 18px 8px;
+	  line-height: 32px;
+	  height: 36px;
+	  font-size: 14px;
+	  text-align: center;
+	  color: #38B8F2;
+	  position: relative;
+	  cursor: pointer;
+	}
+	.head .my-nav .my-nav-list .link .act {
+	  color: transparent;
+	  transition: color ease-out 0.3s;
+	}
+	.head .my-nav .my-nav-list .link .hov {
+	  display: block;
+	  position: absolute;
+	  top: 15px;
+	  right: 0;
+	  left: 0;
+	  height: 32px;
+	  line-height: 32px;
+	  padding: 0px 18px;
+	  color: #666666;
+	  overflow: hidden;
+	  transition: height ease-out 0.3s;
+	}
+	.head .my-nav .my-nav-list .link .hov [icon="menu-mode-scan"] {
+	  color: #77C955;
+	}
+	.head .my-nav .my-nav-list .link:after {
+	  content: " ";
+	  position: absolute;
+	  bottom: 0;
+	  left: 50%;
+	  right: 0;
+	  background: #38B8F2;
+	  height: 2px;
+	  width: 0;
+	  transition: all ease-out 0.3s;
+	}
+	.head .my-nav .my-nav-list .link:hover .act,.head .my-nav .my-nav-list-active .link .act {
+	  color: #38B8F2;
+	}
+	.head .my-nav .my-nav-list .link:hover .act [icon="menu-mode-scan"] ,.head .my-nav .my-nav-list-active .link .act [icon="menu-mode-scan"] {
+	  color: #77C955;
+	}
+	.head .my-nav .my-nav-list .link:hover .hov,.head .my-nav .my-nav-list-active .link .hov {
+	  height: 0;
+	}
+	.head .my-nav .my-nav-list .link:hover .hov [icon="menu-mode-scan"],.head .my-nav .my-nav-list-active .link .hov [icon="menu-mode-scan"] {
+	  color: #77C955;
+	}
+	.head .my-nav .my-nav-list .link:hover:after,.head .my-nav .my-nav-list-active .link:after {
+	  left: 0;
+	  width: 100%;
+	}
+/*	.head .my-nav .my-nav-list-active .link:after{
+		left: 0;
+		width: 100%;
+	}*/
+</style>
+<body class="head ">
+	<ul class="my-nav" clearfix="">
+	        <li class="my-nav-list ">
+	          <a href="#" class="link"><sapn class="act">首页</sapn><span class="hov">首页</span></a>
+	        </li>
+	        <li class="my-nav-list ">
+	          <a href="#" class="link"><sapn class="act">解决方案</sapn><span class="hov">解决方案</span></a>
+	        </li>
+	        <li class="my-nav-list ">
+	          <a href="#" class="link"><sapn class="act">产品</sapn><span class="hov">产品</span></a>
+	        </li>
+	        <li class="my-nav-list my-nav-list-active">
+	          <a href="#" class="link"><sapn class="act">文档</sapn><span class="hov">文档</span></a>
+	        </li>
+
+	        
+   </ul>
+   <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script>
+   		let navLi = $('.my-nav li'),
+   			activeLi = 'my-nav-list-active';
+   		navLi.on('touchend click',function(){
+   			$(this).addClass(activeLi).siblings().removeClass(activeLi);
+   		})
+   </script>
+</body>
+</html>
